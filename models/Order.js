@@ -25,8 +25,7 @@ const OrderSchema = mongoose.Schema({
     },
     payment: {
         type: mongoose.Schema.ObjectId,
-        ref: 'Payment',
-        required: [true, 'Please add payment details']
+        ref: 'Payment'
     },
     status: {
         type: String,

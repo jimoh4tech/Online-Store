@@ -10,7 +10,7 @@ const hpp = require('hpp');
 const cors = require('cors');
 const connectDB = require('./config/db');
 const errorHandler = require('./middlewares/error');
-//const morgan = require('morgan');
+const morgan = require('morgan');
 
 // Load env variables
 dotenv.config({ path: './config/config.env' });
@@ -28,8 +28,8 @@ const payment = require('./route/payments');
 
 const app = express();
 
-// Dev logging middleware
-//TODO
+// Logging middleware
+app.use(morgan());
 
 // Parser body
 app.use(express.json());
